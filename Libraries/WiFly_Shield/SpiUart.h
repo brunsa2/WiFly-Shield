@@ -52,7 +52,7 @@
 class SpiUartDevice : public Stream {
   
   public:
-    void begin(unsigned long baudrate = BAUD_RATE_DEFAULT);
+    void begin(unsigned long baudrate = BAUD_RATE_DEFAULT, unsigned char spiclockdivder = 21);
     int available();
     int read();
 #if ARDUINO >= 100

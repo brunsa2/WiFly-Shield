@@ -49,7 +49,7 @@ struct SPI_UART_cfg SPI_Uart_config = {
 };
 
 
-void SpiUartDevice::begin(unsigned long baudrate) {
+void SpiUartDevice::begin(unsigned long baudrate, unsigned char spiclockdivider = 21) {
   /*
    * Initialize SPI and UART communications
    *
@@ -57,6 +57,7 @@ void SpiUartDevice::begin(unsigned long baudrate) {
    */
 
   SPI.begin();
+  SPI.setClockDivider(spiclockdivider);
   initUart(baudrate);
 }
 
